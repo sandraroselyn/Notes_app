@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain{
+            box-shadow: 0 0 8px;
+            width: 800px;
+            height: 300px;
+            padding: 30px;
+            margin: auto;
+            margin-top: 10%;
+            text-align: center;
+            border-radius: 20px ;
+            background-color: #5C4B3B;           
+            color: white;
+
+        }
+         button{
+            padding: 7px;
+           background-color: #8B6F47;   
+            border-radius: 4px;
+            color: white;
+        }
+        body{
+        background-image: url("https://static.vecteezy.com/system/resources/previews/055/310/723/non_2x/beige-journal-planer-page-with-dotted-square-grid-simple-square-graph-paper-texture-retro-bullet-notebook-pattern-background-repeated-school-math-sheet-wallpaper-note-paper-template-vector.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+        button:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="contain">
+    <h2>Login here</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Username</label>
+        <input type="text" name="name" id="">
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="">
+        <br><br>
+        <button type="submit">Login</button>
+        <br><br>
+    </form>
+    <button>
+        <a href="{% url 'register_page' %}" style="text-decoration: none;color: white;">Register Now</a>
+    </button>
+    </div>
+</body>
+</html>

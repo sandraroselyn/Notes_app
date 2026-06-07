@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            box-shadow: 0 0 8px;
+            width: 500px;
+            padding: 30px;
+            margin: auto;
+            margin-top: 6%;
+            text-align: center;
+             background-color: #5C4B3B;           
+            color: white;
+            border-radius: 20px ;
+
+               
+        }
+        button{
+            padding: 7px;
+           background-color: #8B6F47;   
+            border-radius: 4px;
+            color: white;
+        }
+         body{
+            background-image: url("https://static.vecteezy.com/system/resources/previews/055/310/723/non_2x/beige-journal-planer-page-with-dotted-square-grid-simple-square-graph-paper-texture-retro-bullet-notebook-pattern-background-repeated-school-math-sheet-wallpaper-note-paper-template-vector.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        input{
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            
+        }
+        button:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method='POST'>
+            {% csrf_token %}
+            <h2>Notes Application📝</h2>
+            <br>
+            <label for="date">Date:</label>
+            <input type="date" name="date" value="{{ a.date|date:'Y-m-d' }}">
+            <br><br><br>
+            <label for="">Title:</label>
+            <input type="text" name="title" placeholder="Enter Title">
+            <br><br><br>
+            
+            <textarea name="content" placeholder="Enter Content" style="width: 60%; height: 70px;"></textarea>
+            
+            <br><br><br>
+            <button type="submit">Save</button>
+            <br><br>
+        </form>
+    <button>
+        <a href="{% url 'notes_list' %}" style="text-decoration: none; color: white; ">View Notes</a>
+    </button>
+    </div>
+</body>
+</html>

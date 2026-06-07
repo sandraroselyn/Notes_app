@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+           margin: 100px;
+           box-shadow: 0 0 8px;
+           background-color: #5C4B3B;           
+            color: white;
+
+           border-radius: 20px;
+        }
+       button{
+            padding: 7px;
+           background-color: #8B6F47;   
+            border-radius: 4px;
+            color: white;
+        }
+        .con{
+            text-align: right;
+            margin-right: 30px;
+
+        }
+         body{
+            background-image: url("https://static.vecteezy.com/system/resources/previews/055/310/723/non_2x/beige-journal-planer-page-with-dotted-square-grid-simple-square-graph-paper-texture-retro-bullet-notebook-pattern-background-repeated-school-math-sheet-wallpaper-note-paper-template-vector.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        button:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .note-card{
+        background-color: #7A624A;
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+
+    .note-card:hover{
+        transform: translateY(-5px);
+    }
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <h1 style="text-align:center; padding-top:20px;">Notes List</h1>
+        
+    {% for i in notes %}
+        <div class="note-card">
+            <p><strong>Title:</strong> {{i.title}}</p>
+            <p><strong>Content:</strong> {{i.content}}</p>
+            <p><strong>Date Created:</strong> {{i.date}}</p>
+
+            <button>
+                <a href="{% url 'delete_notes' i.id %}" style="text-decoration: none; color: white;">Delete</a>
+            </button>
+
+            <button>
+                <a href="{% url 'update_notes' i.id %}" style="text-decoration: none; color: white;">Update</a>
+            </button>
+    </div>
+
+        <br><br><br>
+    {% endfor %}
+    <button style="margin-left: 30px; margin-bottom: 20px;">
+        <a href="{% url 'home' %}" style="text-decoration: none; color: white;">Back to home</a>
+    </button>
+    </div>
+</body>
+</html>

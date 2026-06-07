@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+             box-shadow: 0 0 8px;
+            width: 500px;
+            padding: 30px;
+            margin: auto;
+            margin-top: 10%;
+            text-align: center;
+             width: 800px;
+            height: 300px;
+             background-color: #5C4B3B;           
+            color: white;
+
+            border-radius: 20px ;
+        }
+         button{
+            padding: 7px;
+           background-color: #8B6F47;   
+            border-radius: 4px;
+            color: white;
+        }
+         body{
+            background-image: url("https://static.vecteezy.com/system/resources/previews/055/310/723/non_2x/beige-journal-planer-page-with-dotted-square-grid-simple-square-graph-paper-texture-retro-bullet-notebook-pattern-background-repeated-school-math-sheet-wallpaper-note-paper-template-vector.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        button:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+    <h2>Register here</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Enter Username</label>
+        <input type="text" name="name" id="">
+        <br><br>
+        <label for="password">Enter Password</label>
+        <input type="password" name="password" id="">
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+    </div>
+</body>
+</html>
