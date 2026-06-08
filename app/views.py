@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Notes
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -19,8 +19,6 @@ def home(request):
 def notes_list(request):
     notes = Notes.objects.filter(user=request.user)
     return render(request,'notes_list.html',{'notes':notes})   
-   
-    
    
 
 def update_notes(request,id):
@@ -58,5 +56,7 @@ def register_page(request):
         return redirect('login_page')
     return render(request,'register.html')
 
-
+def logout_page(request):
+    logout(request)
+    return redirect('login_page')
 

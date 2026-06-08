@@ -40,6 +40,23 @@
             transform: scale(1.05);
             cursor: pointer;
         }
+
+        .logout{
+            text-align:right;
+            margin: 10px;
+        }
+        .logout a{
+            background: #8B6F47;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+
+        }
+        .logout a:hover{
+            opacity: 0.9;
+        }
+
     </style>
 </head>
 <body>
@@ -64,6 +81,12 @@
     <button>
         <a href="{% url 'notes_list' %}" style="text-decoration: none; color: white; ">View Notes</a>
     </button>
+    <div class="logout">
+        <a href="{% url 'login_page' %}">Logout</a>
     </div>
+    </div>
+
+    
+
 </body>
 </html>
